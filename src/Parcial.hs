@@ -1,7 +1,7 @@
 module Parcial where
 import Text.Show.Functions()
 
-//Hago la estructura por perrito
+/*Hago la estructura por perrito*/
 data Perrito = unPerrito {
   raza :: String,
   juguetesFav :: [String],
@@ -18,5 +18,5 @@ data Actividad = unaActividad {
    ejercicio :: Perrito -> Perrito,
    tiempo :: Int
    }
-//Ejercicio es una función que luego voy a desarrollar
+/*Ejercicio es una función que luego voy a desarrollar*/
    
