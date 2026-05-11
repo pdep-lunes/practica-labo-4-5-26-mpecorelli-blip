@@ -26,4 +26,8 @@ jugar unPerrito = unPerrito { energia = max 0 (energia unPerrito - 10) }
 
 ladrar :: Int -> Perrito -> Perrito
 ladrar CantLadridos unPerrito  = unPerrito { energia = (+ (cantLadridos `div` 2)) (energia unPerrito) }
+
+--funcion regalar
+regalar :: String -> Perrito -> Perrito
+regalar unJuguete unPerrito = unPerrito { juguetesFav = unJuguete : juguetesFav unPerrito }
    
