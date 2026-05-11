@@ -21,9 +21,6 @@ data Actividad = unaActividad {
 --Ejercicio es una función que luego voy a desarrollar
 
 --Modifica energía
-jugar: disminuye en 10 unidades la energía del perrito 🪫. ¡No puede quedar un valor negativo!
-ladrar: aumenta la energía la mitad de los ladridos que se establezcan. 
-
 jugar :: Perrito -> Perrito
 jugar unPerrito = unPerrito { energia = max 0 (energia unPerrito - 10) }
 
