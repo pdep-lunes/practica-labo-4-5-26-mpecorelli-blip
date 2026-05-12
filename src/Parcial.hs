@@ -43,4 +43,49 @@ diaDeSpa unPerrito
 diaDeCampo :: Perrito -> Perrito
 diaDeCampo unPerrito = unPerrito { juguetesFav = tail ( jueguetesFav unPerrito ) }
 
+--modelado de personaje y guarderia
+Zara :: Perrito
+Zara = unPerrito {
+  raza = "dalmata",
+  juguetesFav := ["pelota","mantita"],
+  tiempoEnGuarderia = 90,
+  energia = 80
+  }
+
+GuarderiaDePerritos :: Guarderia
+GuarderiaDePerritos = unaGuarderia {
+  nombre = GuarderíaPdePerritos,
+  rutinaEntretenimiento :: [ actividadJugar , actividadLadrar 18 , actividadRegalar , actividadSpa , actividadCampo ]
+   }
+
+actividadJugar :: Actividad
+actividadJugar = unaActividad {
+    ejercicio = jugar,
+    tiempo = 30
+}
+
+actividadLadrar :: Int -> Actividad
+actividadLadrar = unaActividad {
+    ejercicio = ladrar /unaCantidad,
+    tiempo = 20
+}
+
+actividadRegalar :: Actividad
+actividadRegalar = unaActividad {
+    ejercicio = regalar "pelota",
+    tiempo = 0
+}
+
+actividadSpa :: Actividad
+actividadSpa = unaActividad {
+    ejercicio = diaDeSpa,
+    tiempo = 120
+}
+
+actividadCampo :: Actividad
+actividadCampo = unaActividad {
+    ejercicio = diaDeCampo,
+    tiempo = 720
+}
+
 
