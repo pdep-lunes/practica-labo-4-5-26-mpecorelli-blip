@@ -30,4 +30,17 @@ ladrar CantLadridos unPerrito  = unPerrito { energia = (+ (cantLadridos `div` 2)
 --funcion regalar
 regalar :: String -> Perrito -> Perrito
 regalar unJuguete unPerrito = unPerrito { juguetesFav = unJuguete : juguetesFav unPerrito }
-   
+
+--dias especiales
+diaDeSpa :: Perrito -> Perrito
+diaDeSpa unPerrito  
+    | tiempoEnGuarderia unPerrito >= 50 
+    || raza unPerrito == "dalmata" 
+    || pomerania unPerrito == "pomerania" 
+   = regalar "peine de goma" ( unPerrito { energia = 100 } )
+   | otherwise = unPerrito
+
+diaDeCampo :: Perrito -> Perrito
+diaDeCampo unPerrito = unPerrito { juguetesFav = tail ( jueguetesFav unPerrito ) }
+
+
